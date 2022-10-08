@@ -13,6 +13,9 @@ export class CommentPostHandler implements ICommandHandler<CommentPostCommand> {
       author: command.author,
     })
 
-    return this.commentRepository.save(comment)
+    const savedComment = this.commentRepository.save(comment)
+
+    savedComment.commit()
+    return savedComment
   }
 }

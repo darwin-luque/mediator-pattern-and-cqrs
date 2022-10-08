@@ -1,5 +1,5 @@
 import { CommandBus } from '../buses/command-bus'
-import { CommentPostCommand } from './comment-post/comment-post.command'
+import { CommentPostCommand } from './commands/comment-post/comment-post.command'
 
 export class ExampleController {
   constructor(private readonly commandBus: CommandBus) {}

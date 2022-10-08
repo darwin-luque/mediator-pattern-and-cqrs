@@ -1,6 +1,6 @@
 import { CommandBus } from '../buses/command-bus'
+import { CommentPostHandler } from './commands/comment-post/comment-post.handler'
 import { CommentRepository } from '../repositories/comment.repository'
-import { CommentPostHandler } from './comment-post/comment-post.handler'
 import { ExampleController } from './example.controller'
 
 async function bootstrap() {
@@ -11,9 +11,12 @@ async function bootstrap() {
 
   const exampleController = new ExampleController(commandBus)
 
-  const comment = await exampleController.createComment('Hello world', 'John Doe');
+  const comment = await exampleController.createComment(
+    'Hello world',
+    'John Doe',
+  )
 
-  console.log({ comment });
+  console.log({ comment })
 }
 
 bootstrap()

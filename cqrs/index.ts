@@ -1,13 +1,12 @@
-import { CommandBus } from '../buses/command-bus'
-import { QueryBus } from '../buses/query-bus'
+import { Logger } from '../packages/codespark/common'
+import { CommandBus, QueryBus } from '../packages/codespark/cqrs'
 import { CommentRepository } from '../repositories/comment.repository'
-import { Logger } from '../utils/logger'
 import { UpdateCommentHandler } from './commands/update-comment/update-comment.handler'
 import { comments } from './data'
 import { ExampleController } from './example.controller'
 import { ListCommentsHandler } from './queries/list-comments.handler'
 
-async function bootstrap() {
+export async function bootstrap() {
   const logger = new Logger('CQRS Example')
   const commentsRepository = new CommentRepository(comments)
 
@@ -28,5 +27,3 @@ async function bootstrap() {
 
   logger.log({ allComments })
 }
-
-bootstrap()

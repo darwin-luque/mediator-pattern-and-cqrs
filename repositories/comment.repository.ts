@@ -1,8 +1,16 @@
-import { Aggregate } from '../aggregate'
 import { PostCommentedEvent } from '../ddd/events/post-commented/post-commented.event'
-import { randomString } from '../utils'
+import { PostCommentedHandler } from '../ddd/events/post-commented/post-commented.handler'
+import { randomString } from '../packages/codespark/common'
+import { Aggregate } from '../packages/codespark/cqrs'
 
-export class Comment extends Aggregate {
+export class CustomAggregate extends Aggregate {
+  constructor() {
+    super()
+    this.eventBus.registerHandlers(new PostCommentedHandler())
+  }
+}
+
+export class Comment extends CustomAggregate {
   constructor(
     public readonly id: string,
     public readonly body: string,

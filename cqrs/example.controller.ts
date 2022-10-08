@@ -1,5 +1,4 @@
-import { CommandBus } from '../buses/command-bus'
-import { QueryBus } from '../buses/query-bus'
+import { CommandBus, QueryBus } from '../packages/codespark/cqrs'
 import { Comment } from '../repositories/comment.repository'
 import { UpdateCommentCommand } from './commands/update-comment/update-comment.command'
 import { ListCommentsQuery } from './queries/list-comments.query'

@@ -1,4 +1,4 @@
-import { IQueryHandler } from '../../buses/query-bus'
+import { IQueryHandler } from '../../packages/codespark/cqrs'
 import {
   Comment,
   CommentRepository,

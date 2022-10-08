@@ -1,4 +1,4 @@
-import { ICommandHandler } from '../../../buses/command-bus'
+import { ICommandHandler } from '../../../packages/codespark/cqrs'
 import {
   Comment,
   CommentRepository,

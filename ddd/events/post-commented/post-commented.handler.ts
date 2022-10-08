@@ -1,5 +1,5 @@
-import { IEventHandler } from '../../../buses/event-bus'
-import { Logger } from '../../../utils/logger'
+import { Logger } from '../../../packages/codespark/common'
+import { IEventHandler } from '../../../packages/codespark/cqrs'
 import { PostCommentedEvent } from './post-commented.event'
 
 export class PostCommentedHandler implements IEventHandler<PostCommentedEvent> {

@@ -1,4 +1,4 @@
-import { CommandBus } from '../buses/command-bus'
+import { CommandBus } from '../packages/codespark/cqrs'
 import { CommentPostCommand } from './commands/comment-post/comment-post.command'
 
 export class ExampleController {

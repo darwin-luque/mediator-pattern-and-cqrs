@@ -1,4 +1,4 @@
-import { Type } from '@codespark/common'
+import { Type } from '../../../common'
 
 export interface ICommand {}
 

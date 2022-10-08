@@ -1,4 +1,4 @@
-import { EventBus, IEvent } from '@codespark/cqrs'
+import { EventBus, IEvent } from '../buses'
 
 export class Aggregate {
   autoCommit = false

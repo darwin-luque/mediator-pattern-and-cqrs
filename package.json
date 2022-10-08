@@ -1,0 +1,16 @@
+{
+  "name": "mediator-pattern-and-cqrs",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/darwin-luque/mediator-pattern-and-cqrs.git",
+  "author": "Darwin Luque <darwin.luque.98@gmail.com>",
+  "scripts": {
+    "cqrs": "ts-node index.ts cqrs",
+    "ddd": "ts-node index.ts ddd"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^18.8.3",
+    "module-alias": "^2.2.2"
+  }
+}

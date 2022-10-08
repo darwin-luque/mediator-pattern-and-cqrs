@@ -2,8 +2,10 @@ import { CommandBus } from '../buses/command-bus'
 import { CommentPostHandler } from './commands/comment-post/comment-post.handler'
 import { CommentRepository } from '../repositories/comment.repository'
 import { ExampleController } from './example.controller'
+import { Logger } from '../utils/logger'
 
 async function bootstrap() {
+  const logger = new Logger('DDD Example')
   const commandBus = new CommandBus()
 
   const commentRepository = new CommentRepository()
@@ -16,7 +18,7 @@ async function bootstrap() {
     'John Doe',
   )
 
-  console.log({ comment })
+  logger.log({ comment })
 }
 
 bootstrap()

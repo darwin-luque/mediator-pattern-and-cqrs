@@ -1,10 +1,6 @@
-class A {}
+import { Type } from '../utils/types'
 
-export interface Type<T> extends Function {
-  new (...args: any[]): T
-}
-
-export interface ICommand extends A {}
+export interface ICommand {}
 
 export interface ICommandHandler<
   TCommand extends ICommand = any,

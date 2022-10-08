@@ -1,5 +1,5 @@
 import { EventBus, IEvent } from '../buses/event-bus'
-import { PostCommentedHandler } from '../ddd/events/post-commented.handler'
+import { PostCommentedHandler } from '../ddd/events/post-commented/post-commented.handler'
 
 const eventBus = new EventBus()
 eventBus.registerHandlers(new PostCommentedHandler())

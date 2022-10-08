@@ -1,5 +1,5 @@
 import { Aggregate } from '../aggregate'
-import { PostCommentedEvent } from '../ddd/events/post-commented.event'
+import { PostCommentedEvent } from '../ddd/events/post-commented/post-commented.event'
 import { randomString } from '../utils'
 
 export class Comment extends Aggregate {

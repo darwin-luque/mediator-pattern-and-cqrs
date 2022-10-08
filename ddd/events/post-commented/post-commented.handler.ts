@@ -1,5 +1,4 @@
-import { IEventHandler } from '../../buses/event-bus'
-import { Type } from '../../utils/types'
+import { IEventHandler } from '../../../buses/event-bus'
 import { PostCommentedEvent } from './post-commented.event'
 
 export class PostCommentedHandler implements IEventHandler<PostCommentedEvent> {

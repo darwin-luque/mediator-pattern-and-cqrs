@@ -1,13 +1,17 @@
+import { Aggregate } from '../aggregate'
+import { PostCommentedEvent } from '../ddd/events/post-commented.event'
 import { randomString } from '../utils'
 
-export class Comment {
+export class Comment extends Aggregate {
   constructor(
     public readonly id: string,
     public readonly body: string,
     public readonly author: string,
     public readonly createdAt: Date,
     public readonly updatedAt: Date,
-  ) {}
+  ) {
+    super()
+  }
 }
 
 export class CommentRepository {
@@ -33,7 +37,9 @@ export class CommentRepository {
       )
     } else {
       this.comments.push(comment)
+      this.onInsert(comment)
     }
+
     return comment
   }
 
@@ -48,5 +54,9 @@ export class CommentRepository {
   remove(comment: Comment): Comment {
     this.comments = this.comments.filter((c) => c.id !== comment.id)
     return comment
+  }
+
+  onInsert(comment: Comment) {
+    comment.apply(new PostCommentedEvent(comment))
   }
 }

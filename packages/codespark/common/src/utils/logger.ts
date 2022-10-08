@@ -1,4 +1,4 @@
-import { isPrimitive } from './index'
+import { isPrimitive } from './helpers'
 
 export class Logger {
   constructor(private readonly name = 'Logger') {}

@@ -1,16 +1,13 @@
-import { EventBus, IEvent } from '../buses/event-bus'
-import { PostCommentedHandler } from '../ddd/events/post-commented/post-commented.handler'
-
-const eventBus = new EventBus()
-eventBus.registerHandlers(new PostCommentedHandler())
+import { EventBus, IEvent } from '@codespark/cqrs'
 
 export class Aggregate {
   autoCommit = false
+  constructor(public readonly eventBus = new EventBus()) {}
 
   private events: IEvent[] = []
 
   publish(event: IEvent) {
-    eventBus.publish(event)
+    this.eventBus.publish(event)
   }
 
   publishAll() {

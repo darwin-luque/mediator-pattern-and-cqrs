@@ -10,8 +10,8 @@ export class Comment {
   ) {}
 }
 
-export class CommetRepository {
-  private comments: Comment[] = []
+export class CommentRepository {
+  constructor(private comments: Comment[] = []) {}
 
   create(
     data: Partial<Omit<Omit<Omit<Comment, 'createdAt'>, 'updatedAt'>, 'id'>>,

@@ -1,5 +1,5 @@
-import { ICommandHandler } from '../../buses/command-bus'
-import { CommentRepository } from '../../repositories/comment.repository'
+import { ICommandHandler } from '../../../buses/command-bus'
+import { CommentRepository } from '../../../repositories/comment.repository'
 import { CommentPostCommand } from './comment-post.command'
 
 export class CommentPostHandler implements ICommandHandler<CommentPostCommand> {
